@@ -1,5 +1,10 @@
 import React from "react";
+import VoterRegistrationForm from "./VoterRegistrationForm";
 
 export default function VoterContainer() {
-  return <div>VoterContainer</div>;
+  return (
+    <div>
+      <VoterRegistrationForm />
+    </div>
+  );
 }
