@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { saveVoter } from "../../actionCreators/voterActionCreators";
+import { STARTED } from "../../constants/voterConstants";
 
 export default function VoterRegistrationForm() {
+  const save_status = useSelector((state) => state.voters.save_status);
+  const dispatch = useDispatch();
+
   const [registrationForm, setRegistrationForm] = useState({
     fName: "",
     lName: "",
@@ -17,6 +23,23 @@ export default function VoterRegistrationForm() {
       ...registrationForm,
       [event.target.name]: event.target.value,
     });
+  };
+
+  // const saveVoter = () => {
+  //   fetch(`http://localhost:3010/voters`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(registrationForm),
+  //   })
+  //     .then((response) => response.json())
+  //     .then(() => console.log(`Successfully added voter with`))
+  //     .catch((err) => console.log("Getting error while adding", err));
+  // };
+
+  const onSaveHandler = () => {
+    if (save_status !== STARTED) {
+      saveVoter(dispatch, registrationForm);
+    }
   };
 
   return (
@@ -91,7 +114,7 @@ export default function VoterRegistrationForm() {
           onChange={onChangeHandler}
         />
       </div>
-      <button>Complete Registration</button>
+      <button onClick={onSaveHandler}>Complete Registration</button>
     </div>
   );
 }
