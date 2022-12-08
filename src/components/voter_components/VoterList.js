@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchVoters } from "../../actionCreators/voterActionCreators";
 import VoterRow from "./VoterRow";
+import "../../styling/voter_components/voterList.css";
 
 export default function VoterList() {
   const votersMap = useSelector((state) => state.voters.data);
@@ -13,9 +14,12 @@ export default function VoterList() {
 
   return (
     <div>
-      <table>
+      <table className="voterList">
         <thead className="tableHeading">
           <tr>
+            <th>
+              <button>Delete</button>
+            </th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Address</th>
@@ -23,6 +27,7 @@ export default function VoterList() {
             <th>Date of Birth</th>
             <th>Email</th>
             <th>Phone Number</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

@@ -1,3 +1,4 @@
+import "../../styling/voter_components/voterRow.css";
 import React, { useState } from "react";
 
 export default function VoterRow({ voter }) {
@@ -5,6 +6,9 @@ export default function VoterRow({ voter }) {
 
   return (
     <tr>
+      <td>
+        <input type="checkbox" />
+      </td>
       <td>{currentVoter.fName}</td>
       <td>{currentVoter.lName}</td>
       <td>{currentVoter.address}</td>
@@ -12,6 +16,9 @@ export default function VoterRow({ voter }) {
       <td>{currentVoter.dob}</td>
       <td>{currentVoter.email}</td>
       <td>{currentVoter.telNumber}</td>
+      <td>
+        <button>Edit</button>
+      </td>
     </tr>
   );
 }

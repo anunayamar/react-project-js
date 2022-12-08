@@ -1,0 +1,14 @@
+table {
+    border: 2px solid #ddd;
+    width: 100%;
+}
+
+.tableHeading {
+    background-color: rgb(97, 62, 19);
+    color: white;
+}
+
+th {
+    text-align: left;
+    padding: 16px;
+}
