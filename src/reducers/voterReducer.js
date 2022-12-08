@@ -1,4 +1,5 @@
 import {
+  GET_VOTER_LIST,
   START_ADDING_VOTER,
   VOTER_ADDED,
   VOTER_ADDITION_COMPLETED,
@@ -31,7 +32,11 @@ export const voters = (state = initialState, action) => {
         ...state,
         save_status: action.payload,
       };
-
+    case GET_VOTER_LIST:
+      return {
+        ...state,
+        data: action.payload,
+      };
     default:
       return state;
   }

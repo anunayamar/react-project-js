@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  GET_VOTER_LIST,
   START_ADDING_VOTER,
   VOTER_ADDED,
   VOTER_ADDITION_COMPLETED,
@@ -32,4 +33,18 @@ export const saveVoter = (dispatch, voter) => {
         },
       });
     });
+};
+
+export const fetchVoters = (dispatch) => {
+  axios
+    .get("http://localhost:3010/voters")
+    .then((response) => {
+      const result = {};
+      response?.data.forEach((voter) => (result[voter.id] = voter));
+      dispatch({
+        type: GET_VOTER_LIST,
+        payload: result,
+      });
+    })
+    .catch((error) => console.log(error));
 };

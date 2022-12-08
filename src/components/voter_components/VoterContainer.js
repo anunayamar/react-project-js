@@ -34,8 +34,8 @@ export default function VoterContainer() {
       <button name={SHOW_REGISTRATION_FORM} onClick={handleOnClick}>
         Register Voter
       </button>
-      {formDisplayState.SHOW_VOTERS && <VoterRegistrationForm />}
-      {formDisplayState.SHOW_REGISTRATION_FORM && <VoterList />}
+      {formDisplayState.SHOW_REGISTRATION_FORM && <VoterRegistrationForm />}
+      {formDisplayState.SHOW_VOTERS && <VoterList />}
     </div>
   );
 }
