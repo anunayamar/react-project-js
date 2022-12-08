@@ -12,7 +12,6 @@ const initialState = {
 };
 
 export const voters = (state = initialState, action) => {
-  console.log(JSON.stringify(action));
   switch (action.type) {
     case START_ADDING_VOTER:
       return {
