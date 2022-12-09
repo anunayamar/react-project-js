@@ -13,7 +13,9 @@ export default function ElectionList() {
       <tr key={election.id}>
         <td>{election.electionQuestion}</td>
         <td>
-          <button>View Result</button>
+          <button onClick={() => navigate(`/results/elections/${election.id}`)}>
+            View Result
+          </button>
           <button onClick={() => navigate(`/vote/elections/${election.id}`)}>
             Vote
           </button>
