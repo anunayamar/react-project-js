@@ -1,3 +1,4 @@
+import "../../styling/election_components/electionContainer.css";
 import React, { useState } from "react";
 import ElectionForm from "./ElectionForm";
 import ElectionList from "./ElectionList";
@@ -28,10 +29,18 @@ export default function ElectionContainer() {
 
   return (
     <div>
-      <button name={SHOW_ELECTIONS} onClick={handleOnClick}>
+      <button
+        className="btnElectionContainer"
+        name={SHOW_ELECTIONS}
+        onClick={handleOnClick}
+      >
         Show list of Elections
       </button>
-      <button name={SHOW_ELECTION_FORM} onClick={handleOnClick}>
+      <button
+        className="btnElectionContainer"
+        name={SHOW_ELECTION_FORM}
+        onClick={handleOnClick}
+      >
         Create new election
       </button>
       {formDisplayState.SHOW_ELECTIONS && <ElectionList />}

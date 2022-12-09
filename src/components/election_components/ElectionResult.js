@@ -1,3 +1,4 @@
+import "../../styling/election_components/electionResult.css";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -10,29 +11,35 @@ export default function ElectionResult() {
   const renderResponseNameAndVoteCount = (responseKey) => {
     console.log(responseKey);
     return (
-      <div key={responseKey}>
-        <label>{electionItem.responses[responseKey]}</label>
-        <label>{electionItem.responseVotes[responseKey]}</label>
+      <div className="responseContainer" key={responseKey}>
+        <label className="responseText">
+          {electionItem.responses[responseKey]}
+        </label>
+        <label className="responseVoteCount">
+          {electionItem.responseVotes[responseKey]}
+        </label>
       </div>
     );
   };
 
   return (
-    <div>
-      <h2>Election Result</h2>
+    <div className="main">
+      <div className="headingSection">Election Result</div>
       <div>
-        <label>Election Question:</label>
-        <label>{electionItem.electionQuestion}</label>
+        <label className="electionQuestion">Election Question:</label>
+        <label className="electionQuestionValue">
+          {electionItem.electionQuestion}
+        </label>
       </div>
       <div>
-        <h3>Responses</h3>
+        <div className="headingSection">Responses</div>
         {Object.keys(electionItem.responses).map((responseKey) =>
           renderResponseNameAndVoteCount(responseKey)
         )}
       </div>
       <div>
-        <h3>Total Vote Count</h3>
-        <label>
+        <div className="headingSection">Total Vote Count</div>
+        <label className="voteCount">
           {electionItem.votedUserIds?.length || 0} votes have been casted
         </label>
       </div>

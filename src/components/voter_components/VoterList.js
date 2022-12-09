@@ -41,7 +41,9 @@ export default function VoterList() {
         <thead className="tableHeading">
           <tr>
             <th>
-              <button onClick={deleteHandler}>Delete</button>
+              <button className="btnVoterRow" onClick={deleteHandler}>
+                Delete
+              </button>
             </th>
             <th>First Name</th>
             <th>Last Name</th>

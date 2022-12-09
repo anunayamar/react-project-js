@@ -1,0 +1,43 @@
+.responseText {
+    color: rgb(143, 93, 27);
+    font-style: italic;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.responseVoteCount {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.responseContainer {
+    display: flex;
+}
+
+.headingSection {
+    font-weight: bold;
+    margin: 2rem;
+}
+
+.electionQuestion {
+    color: rgb(143, 93, 27);
+    font-style: italic;
+}
+
+.electionQuestionValue {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+
+.voteCount {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    margin-left: 2rem
+}
+
+.main {
+    background-color: antiquewhite;
+    height: 100vh
+}

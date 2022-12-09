@@ -1,3 +1,5 @@
+import "../../styling/voter_components/voterContainer.css";
+
 import React, { useState } from "react";
 import VoterList from "./VoterList";
 import VoterRegistrationForm from "./VoterRegistrationForm";
@@ -28,10 +30,18 @@ export default function VoterContainer() {
 
   return (
     <div>
-      <button name={SHOW_VOTERS} onClick={handleOnClick}>
+      <button
+        className="btnVoterContainer"
+        name={SHOW_VOTERS}
+        onClick={handleOnClick}
+      >
         Show list of Voters
       </button>
-      <button name={SHOW_REGISTRATION_FORM} onClick={handleOnClick}>
+      <button
+        className="btnVoterContainer"
+        name={SHOW_REGISTRATION_FORM}
+        onClick={handleOnClick}
+      >
         Register Voter
       </button>
       {formDisplayState.SHOW_REGISTRATION_FORM && <VoterRegistrationForm />}

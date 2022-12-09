@@ -1,3 +1,4 @@
+import "../../styling/election_components/electionList.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -13,10 +14,16 @@ export default function ElectionList() {
       <tr key={election.id}>
         <td>{election.electionQuestion}</td>
         <td>
-          <button onClick={() => navigate(`/results/elections/${election.id}`)}>
+          <button
+            className="btnElectionRow"
+            onClick={() => navigate(`/results/elections/${election.id}`)}
+          >
             View Result
           </button>
-          <button onClick={() => navigate(`/vote/elections/${election.id}`)}>
+          <button
+            className="btnElectionRow"
+            onClick={() => navigate(`/vote/elections/${election.id}`)}
+          >
             Vote
           </button>
         </td>
@@ -31,7 +38,7 @@ export default function ElectionList() {
   return (
     <div>
       <table>
-        <thead>
+        <thead className="tableHeading">
           <tr>
             <th>Election Questions</th>
             <th>Actions</th>

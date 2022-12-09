@@ -103,8 +103,12 @@ export default function VoterRow({ voter, checkboxChangeHandler }) {
       )}
 
       <td>
-        <button onClick={() => setEditable(!editable)}>Edit</button>
-        <button onClick={onSaveHandler}>Save</button>
+        <button className="btnVoterRow" onClick={() => setEditable(!editable)}>
+          Edit
+        </button>
+        <button className="btnVoterRow" onClick={onSaveHandler}>
+          Save
+        </button>
       </td>
     </tr>
   );
