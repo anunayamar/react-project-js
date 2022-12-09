@@ -1,8 +1,11 @@
 .link {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 2rem;
+    margin: 10rem;
+        font-weight: bold;
+        font-size: 2rem;
 }
 .nav {
-    background-color: bisque;
-    height: max-content
+    background-color: rgb(204, 196, 255);
+        height: 4rem;
 }
+    

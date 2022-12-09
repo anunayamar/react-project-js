@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveVoter } from "../../actionCreators/voterActionCreators";
 import { STARTED } from "../../constants/voterConstants";
 
+import "../../styling/voter_components/voterRegistrationForm.css";
+
 export default function VoterRegistrationForm() {
   const save_status = useSelector((state) => state.voters.save_status);
   const dispatch = useDispatch();
@@ -17,6 +19,8 @@ export default function VoterRegistrationForm() {
     telNumber: "",
   });
 
+  const [registered, setRegistered] = useState(false);
+
   const onChangeHandler = (event) => {
     console.log(`${event.target.name} ${event.target.value}`);
     setRegistrationForm({
@@ -25,25 +29,15 @@ export default function VoterRegistrationForm() {
     });
   };
 
-  // const saveVoter = () => {
-  //   fetch(`http://localhost:3010/voters`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(registrationForm),
-  //   })
-  //     .then((response) => response.json())
-  //     .then(() => console.log(`Successfully added voter with`))
-  //     .catch((err) => console.log("Getting error while adding", err));
-  // };
-
   const onSaveHandler = () => {
     if (save_status !== STARTED) {
+      setRegistered(true);
       saveVoter(dispatch, registrationForm);
     }
   };
 
   return (
-    <div>
+    <div className="mainVoterForm">
       <div>
         <label>First Name</label>
         <input
@@ -114,7 +108,12 @@ export default function VoterRegistrationForm() {
           onChange={onChangeHandler}
         />
       </div>
-      <button onClick={onSaveHandler}>Complete Registration</button>
+      {!registered && (
+        <button className="btnVoterForm" onClick={onSaveHandler}>
+          Complete Registration
+        </button>
+      )}
+      {registered && <h3>Voter has been registered</h3>}
     </div>
   );
 }

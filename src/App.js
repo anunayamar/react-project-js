@@ -1,3 +1,4 @@
+import "./styling/App.css";
 import { Route, Routes } from "react-router-dom";
 import ElectionContainer from "./components/election_components/ElectionContainer";
 import ElectionResult from "./components/election_components/ElectionResult";

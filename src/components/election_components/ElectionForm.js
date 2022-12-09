@@ -92,10 +92,15 @@ export default function ElectionForm() {
       {renderResponses()}
       {!submitted && (
         <div>
-          <button onClick={() => setNumberOfResponses(numberOfResponses + 1)}>
+          <button
+            className="btnElectionForm"
+            onClick={() => setNumberOfResponses(numberOfResponses + 1)}
+          >
             Add Responses
           </button>
-          <button onClick={onSaveHandler}>Submit Election Form</button>
+          <button className="btnElectionForm" onClick={onSaveHandler}>
+            Submit Election Form
+          </button>
         </div>
       )}
       <div>{submitted && <h3>Election has been created successfully</h3>}</div>

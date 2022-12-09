@@ -1,25 +1,20 @@
-.electionForm {
+.mainVoterForm {
     display: flex;
-    gap: 2rem;
     flex-direction: column;
-
-}
-.electionQuestion {
-    margin: 2rem;
-}
-.item {
-    margin-left: 1rem;
+    gap: 1rem;
 }
 
-input {
-    width: 20rem;
-}
-.btnElectionForm {
+.btnVoterForm {
     background-color: rgb(221, 221, 221);
     font-size: 1rem;
     margin-left: 2rem;
+    width: max-content;
 }
 
-h2 {
+label {
+    margin-left: 2rem;
+}
+
+input {
     margin-left: 2rem;
 }
