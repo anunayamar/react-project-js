@@ -1,0 +1,2 @@
+export const ELECTION_ADDED = "ELECTION_ADDED";
+export const GET_ELECTION_LIST = "GET_ELECTION_LIST";

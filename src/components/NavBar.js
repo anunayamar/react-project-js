@@ -15,9 +15,6 @@ export default function NavBar() {
       <Link className="link" to="/voters">
         Voters
       </Link>
-      <Link className="link" to="/vote">
-        Cast Your Votes
-      </Link>
     </nav>
   );
 }

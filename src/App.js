@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import ElectionContainer from "./components/ElectionContainer";
+import ElectionContainer from "./components/election_components/ElectionContainer";
+
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import VoterContainer from "./components/voter_components/VoterContainer";
-import VotingContainer from "./components/VotingContainer";
+import VotingContainer from "./components/voting_components/VotingContainer";
 
 function App() {
   return (
@@ -11,8 +12,10 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/elections" element={<ElectionContainer />} />
+        <Route path="/vote">
+          <Route path="elections/:electionId" element={<VotingContainer />} />
+        </Route>
         <Route path="/voters" element={<VoterContainer />} />
-        <Route path="/vote" element={<VotingContainer />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
       </Routes>
