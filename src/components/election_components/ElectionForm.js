@@ -12,6 +12,8 @@ export default function ElectionForm() {
     votedUserIds: [],
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const dispatch = useDispatch();
 
   const onResponseChangeHandler = (e) => {
@@ -41,6 +43,7 @@ export default function ElectionForm() {
     };
     saveElection(dispatch, election);
     resetElectionForm();
+    setSubmitted(true);
   };
 
   const resetElectionForm = () => {
@@ -58,8 +61,9 @@ export default function ElectionForm() {
       const key = `response-${i}`;
       responseComponents.push(
         <div className="electionQuestion" key={key}>
-          <label>Enter the response {i + 1}</label>
+          <label className="item">Enter the response {i + 1}</label>
           <input
+            className="item"
             name={key}
             type="text"
             value={electionForm.responses[`response-${i}`]}
@@ -72,10 +76,12 @@ export default function ElectionForm() {
   };
 
   return (
-    <div>
+    <div className="electionForm">
+      <h2>Election Form</h2>
       <div className="electionQuestion">
-        <label>Enter the election question</label>
+        <label className="item">Enter the election question</label>
         <input
+          className="item"
           name="electionQuestion"
           type="text"
           placeholder="Enter the election question"
@@ -84,12 +90,15 @@ export default function ElectionForm() {
         />
       </div>
       {renderResponses()}
-      <div>
-        <button onClick={() => setNumberOfResponses(numberOfResponses + 1)}>
-          Add Responses
-        </button>
-        <button onClick={onSaveHandler}>Submit Election Form</button>
-      </div>
+      {!submitted && (
+        <div>
+          <button onClick={() => setNumberOfResponses(numberOfResponses + 1)}>
+            Add Responses
+          </button>
+          <button onClick={onSaveHandler}>Submit Election Form</button>
+        </div>
+      )}
+      <div>{submitted && <h3>Election has been created successfully</h3>}</div>
     </div>
   );
 }
