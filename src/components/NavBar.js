@@ -6,9 +6,6 @@ import "../styling/NavBar.css";
 export default function NavBar() {
   return (
     <nav className="nav">
-      <Link className="link" to="/home">
-        Home
-      </Link>
       <Link className="link" to="/elections">
         Elections
       </Link>

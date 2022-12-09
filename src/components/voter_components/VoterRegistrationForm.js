@@ -37,10 +37,12 @@ export default function VoterRegistrationForm() {
   };
 
   return (
-    <div className="mainVoterForm">
+    <div className="form">
+      <div class="title">Let's create your account</div>
       <div>
         <label>First Name</label>
         <input
+          className="input"
           name="fName"
           type="text"
           placeholder="Enter the first name"
@@ -51,6 +53,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>Last Name</label>
         <input
+          className="input"
           name="lName"
           type="text"
           placeholder="Enter the last name"
@@ -61,6 +64,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>Address</label>
         <input
+          className="input"
           name="address"
           type="text"
           placeholder="Enter the address"
@@ -71,6 +75,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>City</label>
         <input
+          className="input"
           name="city"
           type="text"
           placeholder="Enter the city"
@@ -81,6 +86,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>Date of Birth</label>
         <input
+          className="input"
           name="dob"
           type="date"
           placeholder="Enter the date of birth"
@@ -91,6 +97,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>Email</label>
         <input
+          className="input"
           name="email"
           type="email"
           placeholder="Enter the email address"
@@ -101,6 +108,7 @@ export default function VoterRegistrationForm() {
       <div>
         <label>Phone Number</label>
         <input
+          className="input"
           name="telNumber"
           type="tel"
           placeholder="Enter the phone number"
@@ -109,7 +117,7 @@ export default function VoterRegistrationForm() {
         />
       </div>
       {!registered && (
-        <button className="btnVoterForm" onClick={onSaveHandler}>
+        <button className="submit" onClick={onSaveHandler}>
           Complete Registration
         </button>
       )}
