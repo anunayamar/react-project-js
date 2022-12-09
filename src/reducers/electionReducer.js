@@ -19,6 +19,7 @@ export const elections = (state = initialState, action) => {
         ...state,
         data: action.payload,
       };
+
     default:
       return state;
   }

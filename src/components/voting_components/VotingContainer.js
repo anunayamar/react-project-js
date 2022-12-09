@@ -35,7 +35,7 @@ export default function VotingContainer() {
         voters[voterId]?.email === email &&
         voters[voterId]?.telNumber === phoneNumber
     );
-    if (!validVoterIds || validVoterIds.length == 0) {
+    if (!validVoterIds || validVoterIds.length === 0) {
       setVoterValidationState(VALIDATION_FAILURE);
     } else if (electionItem.votedUserIds.includes(validVoterIds[0])) {
       setVoterValidationState(ALREADY_VOTED);
@@ -67,7 +67,7 @@ export default function VotingContainer() {
     if (voterValidationState === ALREADY_VOTED) {
       return (
         <div>
-          <h3>Voter information is invalid</h3>
+          <h3>You have already voted in this election</h3>
         </div>
       );
     }

@@ -27,3 +27,13 @@ export const fetchElections = (dispatch) => {
     })
     .catch((error) => console.log(error));
 };
+
+export const updateElectionVotes = (dispatch, election) => {
+  axios
+    .put(`http://localhost:3011/elections/${election.id}`, election)
+    .then((response) => {
+      console.log(JSON.stringify(response));
+    })
+    .catch((error) => console.log(error));
+  fetchElections(dispatch);
+};
